@@ -1,6 +1,9 @@
 /* ingresar peso y altura */
-let height = 1.68 /* en metros */
-let weight = 55
+let height = 1.80 /* en metros */
+let weight = 55 /* en kilos */
+
+let users = []
+
 
 /* validacion de datos de peso y altura */
 const DataValidation = (height, weight)  => {
@@ -9,6 +12,11 @@ const DataValidation = (height, weight)  => {
         return;
     }
 }
+const user = {
+  weight: parseFloat(weight),
+  height: parseFloat(height),
+}
+users.push(user)
 /* calcular el indice de masa corporal */
 const IMC = (height, weight) => {
     /* validar datos */
@@ -20,16 +28,16 @@ const IMC = (height, weight) => {
     if (!isNaN(imc)){
         console.log(imc.toFixed(2))
         if (imc < 18.5){
-            console.log("Bajo peso")
+            console.log("low weight")
         }
         else if(imc >= 18.5 && imc <= 24.9){
-            console.log("Peso normal")
+            console.log("normal weight")
         }
         else if(imc >= 25 && imc <= 29.9) {
-            console.log("sobrepeso")
+            console.log("overweight")
         }
         else{
-            console.log("obesidad")
+            console.log("obesity")
         }
     }
 }
